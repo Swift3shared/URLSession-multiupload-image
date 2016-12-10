@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestMultiForm_with_multi_image" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="PDM-97-j4y">
+                                <rect key="frame" x="16" y="168" width="154" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="2j0-Nv-LZg"/>
+                                    <constraint firstAttribute="height" constant="101" id="7jE-JM-AIy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="uCR-dV-7RM">
+                                <rect key="frame" x="205" y="168" width="154" height="101"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3" translatesAutoresizingMaskIntoConstraints="NO" id="Brh-RH-duZ">
+                                <rect key="frame" x="16" y="312" width="154" height="101"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="U0c-ih-RId">
+                                <rect key="frame" x="205" y="312" width="154" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="0FO-QI-GQf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lse-dX-0ZY">
+                                <rect key="frame" x="162" y="479" width="50" height="30"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iua-RO-JV8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U0c-ih-RId" firstAttribute="trailing" secondItem="uCR-dV-7RM" secondAttribute="trailing" id="2s9-mm-ybx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lse-dX-0ZY" secondAttribute="bottom" constant="158" id="5XZ-jr-F7W"/>
+                            <constraint firstItem="uCR-dV-7RM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D6z-x4-7ui"/>
+                            <constraint firstItem="U0c-ih-RId" firstAttribute="leading" secondItem="uCR-dV-7RM" secondAttribute="leading" id="I9p-Id-B7A"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="trailing" secondItem="Brh-RH-duZ" secondAttribute="trailing" id="MKV-aE-a6C"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="leading" secondItem="Brh-RH-duZ" secondAttribute="leading" id="QO3-Rv-1Em"/>
+                            <constraint firstItem="U0c-ih-RId" firstAttribute="top" secondItem="Brh-RH-duZ" secondAttribute="top" id="Snh-V4-tIJ"/>
+                            <constraint firstItem="Brh-RH-duZ" firstAttribute="top" secondItem="PDM-97-j4y" secondAttribute="bottom" constant="43" id="ZOy-oj-ao2"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="bottom" secondItem="uCR-dV-7RM" secondAttribute="bottom" id="blU-iF-6zl"/>
+                            <constraint firstItem="U0c-ih-RId" firstAttribute="bottom" secondItem="Brh-RH-duZ" secondAttribute="bottom" id="c8I-k9-H23"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="148" id="nUT-au-gDC"/>
+                            <constraint firstItem="lse-dX-0ZY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nav-kM-QMO"/>
+                            <constraint firstItem="uCR-dV-7RM" firstAttribute="leading" secondItem="PDM-97-j4y" secondAttribute="trailing" constant="35" id="uiB-L3-wyc"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="top" secondItem="uCR-dV-7RM" secondAttribute="top" id="uiG-HT-oud"/>
+                            <constraint firstItem="PDM-97-j4y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="umI-d3-Q4w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image1" width="1730" height="1294"/>
+        <image name="image2" width="1414" height="946"/>
+        <image name="image3" width="717" height="531"/>
+        <image name="image4" width="2324" height="1384"/>
+    </resources>
 </document>
